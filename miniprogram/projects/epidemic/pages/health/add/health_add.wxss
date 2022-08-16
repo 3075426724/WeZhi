@@ -1,0 +1,22 @@
+@import "../../../../../style/public/detail.wxss";
+@import "../../../style/skin.wxss";
+
+.top-pic {
+	width: 100%;
+}
+
+.article-box {
+	margin-top: -100rpx;
+	position: relative;
+}
+
+.form-group .line-desc {
+	font-size: 28rpx;
+	text-align: center;
+	width: 100%;
+	color: #666;
+}
+
+.submit-line {
+	width: 100%;
+}

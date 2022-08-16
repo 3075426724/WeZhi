@@ -1,0 +1,70 @@
+<view class="main">
+	<view class="up">
+		<image mode="aspectFill" src="../../../images/home.jpg" />
+	</view>
+
+	<view class="notice" bindtap="url" data-url="../../{{dataList[0].type}}/detail/{{dataList[0].type}}_detail?id={{dataList[0].id}}">
+		<view class="inner text-cut"> <text class="icon-notification text-orange margin-right-xs" style="font-size:35rpx;"></text>{{dataList[0].title}}</view>
+	</view>
+
+	<view class="down">
+		<view class="menu">
+			<view bindtap="url" data-type="relaunch" data-url="../../news/index/news_index" class="item">
+				<view class="item-inner">
+					<view class="img">
+						<image src="../../../images/menu/news.png" />
+					</view>
+					<view class="title">公告通知</view>
+				</view>
+			</view>
+			<view bindtap="url" data-url="../../health/add/health_add?cateId=5" class="item">
+				<view class="item-inner">
+					<view class="img">
+						<image src="../../../images/menu/5.png" />
+					</view>
+					<view class="title">健康打卡</view>
+				</view>
+			</view>
+			<view bindtap="url" data-url="../../health/add/health_add?cateId=1" class="item">
+				<view class="item-inner">
+					<view class="img">
+						<image src="../../../images/menu/1.png" />
+					</view>
+					<view class="title">疫情排查</view>
+				</view>
+			</view>
+			<view bindtap="url" data-url="../../health/add/health_add?cateId=2" class="item">
+				<view class="item-inner">
+					<view class="img">
+						<image src="../../../images/menu/2.png" />
+					</view>
+					<view class="title">出行报备</view>
+				</view>
+			</view>
+			<view bindtap="url" data-url="../../health/add/health_add?cateId=3" class="item">
+				<view class="item-inner">
+					<view class="img">
+						<image src="../../../images/menu/3.png" />
+					</view>
+					<view class="title">核酸报名</view>
+				</view>
+			</view>
+			<view bindtap="url" data-url="../../health/add/health_add?cateId=4" class="item">
+				<view class="item-inner">
+					<view class="img">
+						<image src="../../../images/menu/4.png" />
+					</view>
+					<view class="title">隔离统计</view>
+				</view>
+			</view>
+			 
+		</view>
+
+	</view>
+</view>
+ 
+
+<block wx:if="{{skin.IS_SUB}}">
+	<import src="../../tpls/menu_tpl.wxml" />
+	<template is="menuTpl" data="{{curMenu:'home_index',returnHome:false}}" />
+</block>

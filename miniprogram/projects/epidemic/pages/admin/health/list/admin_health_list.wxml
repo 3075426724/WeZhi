@@ -1,0 +1,60 @@
+<block wx:if="{{isAdmin&&isLoad}}">
+	<view wx:if="{{!_params}}" class="margin-top load loading text-l load-blue"></view>
+	<cmpt-comm-list wx:else _params="{{_params}}" id="cmpt-comm-list" source='admin' type="admin-health-list-{{cateId}}" search="{{search}}" _menus="{{sortMenus}}" _items="{{sortItems}}" pulldownType="{{['modal']}}" route="admin/health_list" sortMenusDefaultIndex="0" topBottom="50" placeholder="搜索姓名，手机" bind:list="bindCommListCmpt">
+
+		<view slot="searchEnd">
+			<button bindtap="url" data-url="../export/admin_health_export?condition={{dataList.condition}}&cateId={{cateId}}" class="btn mid radius bg-admin text-white margin-right-s"><text class="icon-down margin-right-xxs"></text>导出数据</button>
+		</view>
+
+		<!-- List Begin -->
+		<view class="admin-comm-list">
+			<view wx:if="{{dataList && dataList.total }}" class="load text-grey">共有{{dataList.total}}条符合条件记录 </view>
+
+			<view class="item" wx:for="{{dataList.list}}" wx:key="key">
+				<view class="no">{{index+1}}</view>
+				<view class="header">
+					<view class="left text-cut">{{item.user.USER_NAME}}
+					</view>
+					<view class="right"></view>
+				</view>
+
+				<view class="info">
+					<view class="info-item">
+						<view class="title">类型</view>
+						<view class="mao">：</view>
+						<view class="content">#{{item.HEALTH_CATE_NAME}}</view>
+					</view>
+
+					<view class="info-item" bindtap="url" data-url="{{item.user.USER_MOBILE}}" data-type="phone">
+						<view class="title">手机</view>
+						<view class="mao">：</view>
+						<view class="content">{{item.user.USER_MOBILE}} <text class="icon-phone margin-left-xs"></text></view>
+					</view>
+
+					<view class="info-item">
+						<view class="title">填报时间</view>
+						<view class="mao">：</view>
+						<view class="content">{{item.HEALTH_ADD_TIME}}</view>
+					</view>
+
+					<view class="oprt">
+						<view bindtap="url" data-url="../detail/admin_health_detail?id={{item._id}}&name={{item.user.USER_NAME}}&mobile={{item.user.USER_MOBILE}}" data-id="{{item._id}}" class="btn  margin-right-s">查看详情</view>
+
+						<view bindtap="bindDelTap" data-id="{{item._id}}" class="btn  margin-right-s"><text class="icon-delete margin-right-xxs text-orange"></text>删除</view>
+
+					</view>
+				</view>
+			</view>
+		</view>
+		<!-- List END -->
+
+		<!--load begin-->
+		<import src="../../../../../../tpls/public/list_load_tpl.wxml" />
+		<template is="listLoadTpl" data="{{skin:'text-grey',dataList}}" />
+		<!--load end-->
+
+
+	</cmpt-comm-list>
+
+
+</block>

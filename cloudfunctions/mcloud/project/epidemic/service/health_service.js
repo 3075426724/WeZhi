@@ -28,38 +28,7 @@ class HealthService extends BaseProjectService {
 		cateName,
 		forms
 	}) {
-
-		let obj = dataUtil.dbForms2Obj(forms);
-
-
-		// 重复性判断
-		if (cateId == 5) {
-			let where = {
-				HEALTH_DAY: timeUtil.time('Y-M-D'),
-				HEALTH_USER_ID: userId,
-				HEALTH_CATE_ID: cateId
-			}
-			if (await HealthModel.count(where))
-				this.AppError('今日已经打卡，明日再来吧~~');
-		}
-
-
-		// 赋值 
-		let data = {};
-		data.HEALTH_USER_ID = userId;
-		data.HEALTH_CATE_ID = cateId;
-		data.HEALTH_CATE_NAME = cateName;
-		data.HEALTH_DAY = timeUtil.time('Y-M-D');
-
-		data.HEALTH_OBJ = obj;
-		data.HEALTH_FORMS = forms;
-		data.HEALTH_LAST_TIME = this._timestamp;
-
-		let id = await HealthModel.insert(data);
-
-		return {
-			id
-		};
+		this.AppError('该功能暂不开放，如有需要请加作者微信：cclinux0730');
 	}
 
 
@@ -68,22 +37,7 @@ class HealthService extends BaseProjectService {
 		id,
 		forms
 	}) {
- 
-		let obj = dataUtil.dbForms2Obj(forms);
-
-		// 异步处理 新旧文件
-		let oldForms = await HealthModel.getOneField(id, 'HEALTH_FORMS');
-		if (!oldForms) return;
-		cloudUtil.handlerCloudFilesForForms(oldForms, forms);
-
-		// 赋值 
-		let data = {};
-		data.HEALTH_USER_ID = userId;
-		data.HEALTH_OBJ = obj;
-		data.HEALTH_FORMS = forms;
-		data.HEALTH_LAST_TIME = this._timestamp;
-
-		await HealthModel.edit(id, data);
+		this.AppError('该功能暂不开放，如有需要请加作者微信：cclinux0730');
 	}
 
 	// 更新forms信息

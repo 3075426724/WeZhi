@@ -87,7 +87,12 @@ class AdminUserService extends BaseProjectAdminService {
 	}
 
 	async statusUser(id, status, reason) {
-		this.AppError('该功能暂不开放，如有需要请加作者微信：cclinux0730');
+		status = Number(status);
+		let whereUser = {
+			USER_MINI_OPENID: id,
+			USER_STATUS: ['<>', status]
+		}
+		await UserModel.edit(whereUser, { USER_STATUS: status, USER_CHECK_REASON: reason });
 	}
 
 	/**删除用户 */

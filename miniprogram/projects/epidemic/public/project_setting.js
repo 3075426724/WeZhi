@@ -9,7 +9,7 @@ module.exports = { //疫情
 	],
 
 	// 用户
-	USER_REG_CHECK: true,
+	USER_REG_CHECK: false,
 	USER_FIELDS: [
 		{ mark: 'sex', title: '性别', type: 'select', selectOptions: ['男', '女'], must: true },
 		{ mark: 'area', title: '所在地区', type: 'area' },

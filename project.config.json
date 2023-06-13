@@ -39,7 +39,8 @@
 		"showES6CompileOption": false,
 		"useCompilerPlugins": false,
 		"ignoreUploadUnusedFiles": true,
-		"useStaticServer": true
+		"useStaticServer": true,
+		"condition": false
 	},
 	"appid": "wxb100b44af794708e",
 	"projectname": "Multi多功能平台",

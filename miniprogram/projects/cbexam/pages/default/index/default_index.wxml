@@ -1,0 +1,30 @@
+<view class="top">
+	<image mode="widthFix" src="../../../images/home.jpg" class="loading" />
+</view>
+
+<view class="main"> 
+	<view class="rule">
+		<view class="item" bindtap="url" data-url="../../about/index/about_index?key=SETUP_CONTENT_RULE">答题规则</view> 
+		<view class="item margin-left-s" bindtap="url" data-url="../../question/index/question_index?type=0">训练场</view>
+	</view>
+	<view class="list">
+		<view wx:for="{{list}}" wx:key="ky" class="item" bindtap="url" data-url="../../question/run/question_run?cateId={{item.id}}&type=1">
+			<view class="left">
+				<view class="line1">{{item.title}}</view>
+			</view>
+			<view class="right">
+				<image class="right" mode="aspectFill" src="../../../images/menu/{{item.id}}.png" />
+			</view>
+		</view>
+
+	</view> 
+
+	<view style="height: 100rpx;"></view>
+	
+</view>
+
+
+<block wx:if="{{skin.IS_SUB}}">
+	<import src="../../tpls/menu_tpl.wxml" />
+	<template is="menuTpl" data="{{curMenu:'home_index',returnHome:false}}" />
+</block>

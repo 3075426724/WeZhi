@@ -1,0 +1,139 @@
+@import "../../../style/skin.wxss";
+
+page {
+	background-color: var(--projectColor);
+}
+
+.main {
+	width: 100%;
+	padding: 10rpx 30rpx;
+}
+
+.load.loading::after {
+	content: "题库加载中...";
+} 
+
+.load-project {
+	color: #fff !important;
+}
+
+.time {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	padding: 20rpx 0;
+	font-size: 36rpx;
+	color: #fff;
+	margin-bottom: 10rpx;
+}
+
+.time .inner { 
+	width: 600rpx; 
+	border-radius: 6rpx; 
+	text-align: center;
+	padding:20rpx 0;
+}
+
+.info-box {
+	width: 100%;
+	background-color: #fff;
+	min-height: 300rpx;
+	border-radius: 10rpx;
+	padding: 40rpx 40rpx;
+}
+
+.info-box .line1 {
+	width: 100%;
+	font-size: 28rpx;
+	text-align: right;
+	margin-bottom: 30rpx;
+	color: #333;
+	padding: 0 10rpx;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.info-box .line1 .type {
+	background-color: #f2f2f2;
+	padding: 2rpx 18rpx;
+	border-radius: 4rpx;
+}
+
+.info-box .img {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	margin-top: 20rpx;
+}
+
+.info-box .img>image {
+	width: 200rpx;
+	border-radius: 10rpx;
+	margin: 16rpx 0;
+	max-height: 300rpx;
+}
+
+.info-box .title {
+	font-size: 30rpx;
+}
+
+.info-box .option-list {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	margin-top: 30rpx;
+	padding: 0 40rpx;
+}
+
+.info-box .option-list .item {
+	font-size: 26rpx;
+	width: 100%;
+	border: 2rpx solid var(--projectColor);
+	box-shadow: 6rpx 6rpx 6rpx var(--brownLight);
+	padding: 20rpx 20rpx;
+	margin-bottom: 22rpx;
+	border-radius: 10rpx;
+	text-align: center;
+	color: #333;
+}
+
+.info-box .option-list .item.cur {
+	background-color: var(--orangeLight);
+}
+
+.info-box .next {
+	font-size: 30rpx;
+	width: 100%;
+	border: 2rpx solid #666;
+	padding: 20rpx 20rpx;
+	margin-bottom: 40rpx;
+	border-radius: 80rpx;
+	text-align: center;
+	color: #666;
+	margin-top: 40rpx;
+}
+
+.oprt {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	margin-top: 30rpx;
+	padding: 0 40rpx;
+}
+
+.oprt .submit {
+	font-size: 30rpx;
+	width: 100%;
+	background-color: var(--projectColor);
+	padding: 20rpx 20rpx;
+	margin-bottom: 40rpx;
+	border-radius: 10rpx;
+	text-align: center;
+	color: #fff;
+}
+
+.oprt .hover {
+	opacity: .8;
+	transform: scale(.95, .95);
+}

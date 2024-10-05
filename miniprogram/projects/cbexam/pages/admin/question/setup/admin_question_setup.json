@@ -1,0 +1,9 @@
+{
+	"usingComponents": { 
+		"cmpt-form-show": "/cmpts/public/form/form_show/form_show_cmpt"
+	},
+	"navigationBarBackgroundColor": "#2499f2",
+	"navigationBarTextStyle": "white",
+	"enablePullDownRefresh": true,
+	"navigationBarTitleText": "答题参数设置"
+}

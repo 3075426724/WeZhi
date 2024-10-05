@@ -1,0 +1,20 @@
+@import "../../../../../style/public/comm_box_list.wxss";
+@import "../../../style/skin.wxss";
+
+page {
+	background-color: #ffffff !important;
+}
+
+.comm-list-flow .item-flow .item-flow-inner image {
+	border-radius: 14rpx !important;
+}
+
+.comm-list-flow .item-flow:nth-child(2n) .item-flow-inner image {
+	border-top-left-radius: 60rpx !important;
+	border-bottom-right-radius: 60rpx !important;
+}
+
+.comm-list-flow .item-flow:nth-child(2n+1) .item-flow-inner image {
+	border-top-right-radius: 60rpx !important;
+	border-bottom-left-radius: 60rpx !important;
+}

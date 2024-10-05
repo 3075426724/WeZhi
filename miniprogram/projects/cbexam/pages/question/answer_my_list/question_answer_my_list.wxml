@@ -1,0 +1,42 @@
+<view wx:if="{{!isLoad}}" class="margin-top load loading text-l load-project"></view>
+<block wx:if="{{isLoad}}">
+	<cmpt-comm-list showSearch="{{false}}" id="my-answer-list" type="my-answer-list" search="{{search||''}}" _params="{{!search&&_params}}" _menus="{{sortMenus}}" sortMenusDefaultIndex="{{0}}" _items="{{sortItems}}" route="question/my_answer_list" isTotalMenu="{{true}}" pulldownType="{{['modal','modal','modal']}}" topBottom="120" placeholder="搜索" bind:list="bindCommListCmpt">
+
+		<!-- List Begin -->
+		<view class="list">
+			<block wx:for="{{dataList.list}}" wx:key="k">
+				<view class="item shadow-project">
+					<view class="mark {{item.ANSWER_TYPE==1?'bg-blue light':'bg-cyan light'}}">{{item.ANSWER_TYPE==1?'答题竞赛':'训练场'}}</view>
+					<view class="line-title">
+						<view class="left bg-project">
+							<text>{{item.ANSWER_SCORE||0}}</text>
+							<text class="sup">分</text>
+						</view>
+						<view class="right">共{{item.ANSWER_CNT}}道题，{{item.ANSWER_SUCC_CNT}}道正确，{{item.ANSWER_CNT-item.ANSWER_SUCC_CNT}}道错误</view>
+					</view>
+					<view class="line2"><text wx:if="{{cateIdOptions.length>1}}">《{{item.ANSWER_CATE_NAME}}》，</text>得{{item.ANSWER_SCORE}}分，耗时{{item.ANSWER_DURATION}} </view>
+					<view class="line2"> {{item.start}} ~ {{item.end}} </view>
+
+					<view class="oprt">
+						<view class="bg-red light" bindtap="url" data-url="../answer_detail/question_answer_detail?id={{item._id}}">查看详情</view>
+
+						<view wx:if="{{item.ANSWER_TYPE==0}}" class="bg-grey light" bindtap="bindDelTap" data-id="{{item._id}}"><text class="icon-delete text-gray"></text>删除</view>
+					</view>
+				</view>
+
+			</block>
+		</view>
+
+		<!-- List END -->
+
+		<!--load begin-->
+		<import src="../../../../../tpls/public/list_load_tpl.wxml" />
+		<template is="listLoadTpl" data="{{skin:'load-project',dataList}}" />
+		<!--load end-->
+
+
+
+	</cmpt-comm-list>
+
+
+</block>

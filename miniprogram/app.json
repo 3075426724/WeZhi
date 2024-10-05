@@ -1,0 +1,101 @@
+{
+	"pages": [
+		"projects/cbexam/pages/default/index/default_index",
+		"projects/cbexam/pages/about/list/about_list",
+		"projects/cbexam/pages/about/index/about_index",
+		"projects/cbexam/pages/search/search",
+		"projects/cbexam/pages/my/index/my_index",
+		"projects/cbexam/pages/my/reg/my_reg",
+		"projects/cbexam/pages/my/edit/my_edit",
+		"projects/cbexam/pages/my/foot/my_foot",
+		"projects/cbexam/pages/my/fav/my_fav",
+		"projects/cbexam/pages/news/index/news_index",
+		"projects/cbexam/pages/news/detail/news_detail",
+		"projects/cbexam/pages/news/cate1/news_cate1",
+		"projects/cbexam/pages/news/cate2/news_cate2",
+		"projects/cbexam/pages/admin/news/list/admin_news_list",
+		"projects/cbexam/pages/admin/news/add/admin_news_add",
+		"projects/cbexam/pages/admin/news/edit/admin_news_edit",
+		"projects/cbexam/pages/admin/setup/about/admin_setup_about",
+		"projects/cbexam/pages/admin/setup/about_list/admin_setup_about_list",
+		"projects/cbexam/pages/admin/setup/qr/admin_setup_qr",
+		"projects/cbexam/pages/admin/index/home/admin_home",
+		"projects/cbexam/pages/admin/index/login/admin_login",
+		"projects/cbexam/pages/admin/content/admin_content",
+		"projects/cbexam/pages/admin/mgr/log/admin_log_list",
+		"projects/cbexam/pages/admin/mgr/edit/admin_mgr_edit",
+		"projects/cbexam/pages/admin/mgr/list/admin_mgr_list",
+		"projects/cbexam/pages/admin/mgr/add/admin_mgr_add",
+		"projects/cbexam/pages/admin/mgr/pwd/admin_mgr_pwd",
+		"projects/cbexam/pages/admin/user/list/admin_user_list",
+		"projects/cbexam/pages/admin/user/detail/admin_user_detail",
+		"projects/cbexam/pages/admin/user/export/admin_user_export",
+		"projects/cbexam/pages/admin/question/add/admin_question_add",
+		"projects/cbexam/pages/admin/question/edit/admin_question_edit",
+		"projects/cbexam/pages/admin/question/list/admin_question_list",
+		"projects/cbexam/pages/question/index/question_index",
+		"projects/cbexam/pages/question/result/question_result",
+		"projects/cbexam/pages/question/run/question_run",
+		"projects/cbexam/pages/question/answer_my_list/question_answer_my_list",
+		"projects/cbexam/pages/question/answer_detail/question_answer_detail",
+		"projects/cbexam/pages/admin/question/setup/admin_question_setup",
+		"projects/cbexam/pages/admin/question/answer_list/admin_answer_list",
+		"projects/cbexam/pages/admin/question/import/admin_question_import",
+		"projects/cbexam/pages/admin/question/clear/admin_question_clear",
+		"projects/cbexam/pages/question/rank/answer_rank",
+		"projects/cbexam/pages/admin/question/rank_export/admin_question_rank_export",
+		"cmpts/public/form/form_set/field/form_set_field",
+		"cmpts/public/form/form_show/content/form_show_content",
+		"pages/test1/test1"
+	],
+	"window": {
+		"backgroundColor": "#f1f1f1",
+		"backgroundTextStyle": "dark",
+		"navigationBarBackgroundColor": "#E9341F",
+		"navigationBarTitleText": "知识竞赛答题小程序",
+		"navigationBarTextStyle": "white"
+	},
+	"tabBar": {
+		"custom": false,
+		"backgroundColor": "#FFFFFF",
+		"color": "#999999",
+		"selectedColor": "#E9341F",
+		"list": [
+			{
+				"pagePath": "projects/cbexam/pages/default/index/default_index",
+				"text": "首页",
+				"iconPath": "/projects/cbexam/images/tabbar/home.png",
+				"selectedIconPath": "/projects/cbexam/images/tabbar/home_cur.png"
+			},
+			{
+				"pagePath": "projects/cbexam/pages/news/index/news_index",
+				"text": "通知公告",
+				"iconPath": "/projects/cbexam/images/tabbar/news.png",
+				"selectedIconPath": "/projects/cbexam/images/tabbar/news_cur.png"
+			},
+			{
+				"pagePath": "projects/cbexam/pages/question/rank/answer_rank",
+				"text": "排行榜",
+				"iconPath": "/projects/cbexam/images/tabbar/day.png",
+				"selectedIconPath": "/projects/cbexam/images/tabbar/day_cur.png"
+			},
+			{
+				"pagePath": "projects/cbexam/pages/my/index/my_index",
+				"text": "我的",
+				"iconPath": "/projects/cbexam/images/tabbar/my.png",
+				"selectedIconPath": "/projects/cbexam/images/tabbar/my_cur.png"
+			}
+		]
+	},
+	"permission": {
+		"scope.userLocation": {
+			"desc": "获取你当前位置信息用于小程序位置接口的效果展示"
+		}
+	},
+	"usingComponents": {
+		"cmpt-comm-list": "/cmpts/public/list/comm_list_cmpt",
+		"cmpt-picker": "/cmpts/public/picker/picker_cmpt",
+		"cmpt-modal": "/cmpts/public/modal/modal_cmpt"
+	},
+	"sitemapLocation": "sitemap.json"
+}

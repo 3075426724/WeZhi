@@ -1,0 +1,8 @@
+<view class="main">
+	<view class="info-box">
+		<view wx:if="{{type==0}}" class="num">训练场答题结果不计入总分！</view>
+		<view wx:for="{{cateList}}" wx:key="k" bind:tap="url" data-url="../run/question_run?cateId={{item.id}}&type={{type}}" hover-class="hover" class="submit bg-orange light">{{item.title}}</view>
+
+		<view wx:if="{{type==1}}" bind:tap="url" data-url="../../about/index/about_index?key=SETUP_CONTENT_RULE" hover-class="hover" class="submit bg-grey light margin-top">答题规则</view>
+	</view> 
+</view>

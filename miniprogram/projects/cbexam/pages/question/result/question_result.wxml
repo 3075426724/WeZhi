@@ -1,0 +1,12 @@
+<view wx:if="{{isLoad===null}}" class="margin-top load notexist text-l load-project"></view>
+<view wx:if="{{isLoad===false}}" class="margin-top load loading text-l load-project"></view>
+
+<block wx:if="{{isLoad}}">
+	<wxs src="../../../../../tpls/wxs/tools.wxs" module="tools" />
+	<include src="question_result_tpl.wxml" />
+
+	<view class="save-bottom safe-bottom">
+		<view bind:tap="url" data-url="/projects/bowu/pages/default/index/default_index" data-type="relaunch" class="inner btn-project bg-white light" style="padding:20rpx 40rpx;">回首页</view>
+		<view bind:tap="bindSaveTap" class="margin-left inner btn-project" style="padding:20rpx 80rpx;">保存本次训练结果</view>
+	</view>
+</block>

@@ -1,0 +1,25 @@
+<view class="main-admin" wx:if="{{isAdmin}}">
+	<form bindsubmit="bindFormSubmit">
+		<view class="form-box shadow">
+
+
+			<view class="hint-desc text-bold" style="padding-top:10rpx"><text class="icon-info margin-right-xxs"></text>注意事项</view>
+			<view class="hint-desc">清空后不可恢复</view>
+
+
+			<view wx:if="{{cateIdOptions.length>1}}" class="form-group arrow" id="formCateId">
+				<view class="title must">分类</view>
+				<cmpt-picker id="cate-picker" sourceData="{{cateIdOptions}}" bind:select="url" data-type="picker" data-item="formCateId" item="{{formCateId}}"> </cmpt-picker>
+			</view>
+			<view wx:if="{{formCateIdFocus}}" class="hint-desc error">{{formCateIdFocus}}</view>
+
+		</view>
+
+
+		<view class="padding-bottom flex  flex-direction  ">
+			<button formType="submit" class="btn-admin bg-blue margin-top-s text-bold large bg-{{skin}}">清空题库</button>
+		</view>
+
+
+	</form>
+</view>

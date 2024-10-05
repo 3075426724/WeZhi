@@ -1,0 +1,71 @@
+<block wx:if="{{isAdmin&&isLoad}}">
+	<cmpt-comm-list source='admin' type="admin-question-list" search="{{search||''}}" _menus="{{sortMenus}}" _items="{{sortItems}}" route="admin/question_list" pulldownType="{{['modal','modal','modal','modal','modal']}}" sortMenusDefaultIndex="0" topBottom="50" placeholder="搜索题目" bind:list="bindCommListCmpt">
+
+		<view slot="searchEnd">
+			<button bindtap="url" data-url="../clear/admin_question_clear" class="btn radius bg-red light margin-right-s">清空题库</button>
+			<button bindtap="url" data-url="../add/admin_question_add" class="btn radius bg-admin text-white margin-right-s"><text class="icon-roundadd"></text>添加题目</button>
+		</view>
+		<!-- List Begin -->
+		<view class="admin-comm-list">
+			<view wx:if="{{dataList && dataList.total }}" class="load text-grey">共有{{dataList.total}}条符合条件记录</view>
+
+			<view class="item" wx:for="{{dataList.list}}" wx:key="key">
+				<view class="no">{{index+1}}</view>
+				<view class="header">
+					<view class="left text-cut">
+					</view>
+					<view class="right">
+						<text wx:if="{{item.QUESTION_STATUS==1}}" class="text-black">「正常」</text>
+						<text wx:elif="{{item.QUESTION_STATUS==0}}" class="text-orange">「停用」</text>
+					</view>
+				</view>
+
+				<view class="info">
+					<view wx:if="{{cateIdOptions.length>1}}" class="info-item">
+						<view class="title">分类</view>
+						<view class="mao">：</view>
+						<view class="content text-blue">『{{item.QUESTION_CATE_NAME}}』  </view>
+					</view>
+
+					<view class="info-item">
+						<view class="title">题目</view>
+						<view class="mao">：</view>
+						<view class="content">{{item.QUESTION_TITLE}} </view>
+					</view>
+					<view class="info-item">
+						<view class="title">类型</view>
+						<view class="mao">：</view>
+						<view class="content">{{item.QUESTION_OBJ.type}} </view>
+					</view>
+					<view class="info-item">
+						<view class="title">正确答案</view>
+						<view class="mao">：</view>
+						<view class="content">{{item.QUESTION_OBJ.answer}} </view>
+					</view>
+
+					<view class="info-item">
+						<view class="title">创建</view>
+						<view class="mao">：</view>
+						<view class="content">{{item.QUESTION_ADD_TIME}} <text class="text-gray margin-left-xxs text-s">{{item.QUESTION_OBJ.item}}</text></view>
+					</view>
+
+					<view class="oprt">
+						<view bindtap="url" data-url="../edit/admin_question_edit?id={{item._id}}" class="btn round margin-right-s"><text class="icon-edit margin-right-xxs"></text>编辑</view>
+						<view bindtap="bindStatusMoreTap" data-id="{{item._id}}" class="btn margin-right-s">状态管理</view>
+
+					</view>
+				</view>
+			</view>
+
+		</view>
+		<!-- List END -->
+
+		<!--load begin-->
+		<import src="../../../../../../tpls/public/list_load_tpl.wxml" />
+		<template is="listLoadTpl" data="{{dataList,skin:'text-grey'}}" />
+		<!--load end-->
+
+
+	</cmpt-comm-list>
+
+</block>

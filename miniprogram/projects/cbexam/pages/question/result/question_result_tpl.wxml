@@ -1,0 +1,28 @@
+<view class="main">
+	<view class="list">
+		<view class="item shadow-project {{item.status?'succ':'error'}}" wx:for="{{questionList}}" wx:key="k">
+			<image class="mark" src="../../../images/question/{{item.status?'ok':'fail'}}.png" />
+			<view class="title"><text>{{index+1}}、{{item.title}}</text></view>
+
+			<image wx:if="{{item.img}}" mode="widthFix" bind:tap="url" data-type="image" data-url="{{item.img}}" src="{{item.img}}" class="loading img" lazy-loading="{{true}}" show-menu-by-longpress> </image>
+
+			<block wx:if="{{item.type=='单选题'}}" wx:for="{{item.optionList}}" wx:for-item="itm" wx:key="k">
+				<view wx:if="{{tools.includes(item.answer,itm.val)}}" class="option"><text class="icon-radiobox margin-right-xs text-project"></text>{{itm.val}}、{{itm.label}}</view>
+				<view wx:else class="option"><text class="icon-round margin-right-xs text-gray"></text>{{itm.val}}、{{itm.label}}</view>
+			</block>
+
+			<block wx:if="{{item.type=='多选题'}}" wx:for="{{item.optionList}}" wx:for-item="itm" wx:key="k">
+				<view wx:if="{{tools.includes(item.answer,itm.val)}}" class="option"><text class="icon-squarecheckfill margin-right-xs text-project"></text>{{itm.val}}、{{itm.label}}</view>
+				<view wx:else class="option"><text class="icon-squarecheckfill margin-right-xs" style="color:#ccc"></text>{{itm.val}}、{{itm.label}}</view>
+			</block>
+
+			<view class="line1 text-bold {{item.status?'text-green':'text-red'}}">你的回答：<text class="margin-right-xxs">{{item.input}}</text> <text class="text-bold {{item.status?'icon-check':'icon-close'}}"></text></view>
+			<view class="line1">正确答案：{{item.answer}}</view>
+			<view wx:if="{{item.desc}}" class="line1 text-grey">答案解析：{{item.desc||'无'}}</view>
+		</view>
+	</view>
+</view>
+<view style="height: 200rpx;"></view>
+
+<import src="../../../../../tpls/public/top_tpl.wxml" />
+<template is="topTpl" data="{{topBtnShow , bottom:topBtnBottom}}" />

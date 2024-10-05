@@ -1,0 +1,149 @@
+@import "../../../style/skin.wxss";
+ 
+
+.main {
+	width: 100%;
+	padding: 10rpx 35rpx;
+	position: relative;
+}
+
+.bg {
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0; 
+}
+
+
+.top {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	padding: 20rpx 30rpx 20rpx;
+	z-index: 999; 
+}
+
+.top .left {
+	display: flex;
+	align-items: center;
+	justify-content: center; 
+	width: 105rpx;
+	height: 105rpx;
+	margin-right: 50rpx;
+	border-radius: 50%;
+	background-color: #fff;
+}
+
+.top .left image {
+	width: 65rpx;
+	height: 65rpx;
+	border-radius: 50%;
+
+}
+
+.top .right {
+	flex: 1;
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	flex-direction: column;
+	z-index: 999;
+}
+
+.top .right .name {
+	font-weight: bold;
+	font-size: 32rpx;
+	margin-bottom: 15rpx;
+	color: #fff;
+}
+
+.top .right .desc {
+	font-size: 24rpx;
+	color: #fff;
+}
+
+.menu {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	padding: 40rpx 0rpx;
+	margin-top: 30rpx;
+	background-color: #fff;
+	z-index: 999;
+	border-radius: 10rpx;
+}
+
+.menu .item {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	position: relative;
+	width: calc(100% / 3);
+}
+
+.menu .item {
+	border-right: 2rpx dotted #ccc;
+}
+
+.menu .item:last-child {
+	border-right: 0;
+}
+
+.menu .item .title {
+	color: #333;
+	font-weight: bold;
+	font-size: 30rpx;
+	margin-bottom: 15rpx;
+}
+
+.menu .item .title .ss {
+	color: var(--projectColor);
+	font-size: 20rpx;
+	margin-left: 2rpx;
+}
+
+.menu .item .desc {
+	color: #aaa;
+	font-size: 24rpx;
+}
+
+
+.list-menu {
+	width: 100%;
+	padding: 10rpx 25rpx 15rpx;
+	display: flex;
+	flex-direction: column;
+	background-color: #fff;
+	border-radius: 10rpx;
+	margin-top: 30rpx;
+}
+
+.list-menu .item {
+	width: 100%;
+	display: flex;
+	font-size: 30rpx;
+	align-items: center;
+	justify-content: flex-start;
+	padding: 35rpx 10rpx;
+	border-bottom: 1rpx solid #ddd;
+}
+
+.list-menu .item:last-child {
+	padding-bottom: 10rpx;
+}
+
+.list-menu .item:last-child {
+	border-bottom: 0rpx;
+}
+
+.list-menu .item .title {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	color: #000;
+}
+
+.list-menu .item .title .title-ico {
+	margin-right: 20rpx;
+}

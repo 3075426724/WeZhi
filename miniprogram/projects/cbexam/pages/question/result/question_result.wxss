@@ -1,0 +1,91 @@
+@import "../../../style/skin.wxss"; 
+
+.main {
+	width: 100%;
+	padding: 20rpx;
+}
+
+
+.list {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.list .item {
+	background-color: #fff;
+	margin-bottom: 24rpx;
+	border-radius: 10rpx;
+	padding: 50rpx 30rpx 30rpx;
+	font-size: 26rpx;
+	overflow: hidden;
+	position: relative;
+}
+
+.list .item.succ {
+	background-color: #fff; 
+}
+
+.list .item.error {
+	background-color: #fcfcfc; 
+}
+
+.list .item .mark {
+	position: absolute;
+	top: 10rpx;
+	right: 10rpx;
+	width: 80rpx;
+	height: 80rpx; 
+	opacity: 9;
+}
+
+.list .item .img {
+	width: 200rpx; 
+	border-radius: 10rpx;
+	margin: 10rpx 0;
+	background-color: #fff !important;
+}
+
+.list .item .title {
+	font-size: 28rpx;
+	color: #333;
+	margin-bottom: 20rpx;
+	max-height: 300rpx;
+}
+
+.list .item .option {
+	color: #555;
+	padding: 8rpx 10rpx;
+	display: flex;
+	align-items: baseline;
+}
+
+.list .item .line1 {
+	color: #333;
+	margin-top: 20rpx;
+	margin-bottom: 20rpx;
+}
+
+.list .item .line2 {
+	color: #333;
+	margin-bottom: 10rpx;
+}
+
+.save-bottom {
+	position: fixed;
+	bottom: 50rpx;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	z-index: 999999;
+}
+
+.save-bottom .inner {
+	padding: 20rpx 120rpx; 
+	border-radius: 40rpx!important; 
+}
+
+.btn-project {
+	line-height: unset;
+	height: unset;
+}

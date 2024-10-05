@@ -1,0 +1,69 @@
+<block wx:if="{{isAdmin&&isLoad}}">
+	<cmpt-comm-list source='admin' type="admin-answer-list" search="{{search||''}}" _menus="{{sortMenus}}" _items="{{sortItems}}" route="admin/answer_list" sortMenusDefaultIndex="0" topBottom="50" placeholder="搜索用户名，手机号" bind:list="bindCommListCmpt">
+
+		<view slot="searchEnd">
+			 
+		</view>
+		<!-- List Begin -->
+		<view class="admin-comm-list">
+			<view wx:if="{{dataList && dataList.total }}" class="load text-grey">共有{{dataList.total}}条符合条件记录</view>
+
+			<view class="item" wx:for="{{dataList.list}}" wx:key="key">
+				<view class="no">{{index+1}}</view>
+				<view class="header">
+					<view class="left text-cut">
+					</view>
+					<view class="right">
+					 
+					</view>
+				</view>
+
+				<view class="info">
+				
+					<view wx:if="{{cateIdOptions.length>1}}" class="info-item">
+						<view class="title">分类</view>
+						<view class="mao">：</view>
+						<view class="content text-blue">『{{item.ANSWER_CATE_NAME}}』  </view>
+					</view>
+
+					<view class="info-item" bind:tap="url" data-url="../../user/detail/admin_user_detail?id={{item.ANSWER_USER_ID}}">
+						<view class="title">用户</view>
+						<view class="mao">：</view>
+						<view class="content text-blue">{{item.user.USER_NAME}}  <text class="text-s text-grey margin-left-xxs">({{item.user.USER_MOBILE}})</text></view>
+					</view>
+					<view class="info-item">
+						<view class="title">结果</view>
+						<view class="mao">：</view>
+						<view class="content">共{{item.ANSWER_CNT}}道题，{{item.ANSWER_SUCC_CNT}}道正确，{{item.ANSWER_CNT-item.ANSWER_SUCC_CNT}}道错误，耗时{{item.ANSWER_DURATION}}  </view>
+					</view>
+					 
+					<view class="info-item">
+						<view class="title">得分</view>
+						<view class="mao">：</view>
+						<view class="content"> {{item.ANSWER_SCORE}}分</view>
+					</view>
+
+					<view class="info-item">
+						<view class="title">时间</view>
+						<view class="mao">：</view>
+						<view class="content"> {{item.start}} ~ {{item.end}}</view>
+					</view>
+
+					<view class="oprt"> 
+						<view bindtap="bindDelTap" data-id="{{item._id}}" class="btn margin-right-s">删除</view> 
+					</view>
+				</view>
+			</view>
+
+		</view>
+		<!-- List END -->
+
+		<!--load begin-->
+		<import src="../../../../../../tpls/public/list_load_tpl.wxml" />
+		<template is="listLoadTpl" data="{{dataList,skin:'text-grey'}}" />
+		<!--load end-->
+
+
+	</cmpt-comm-list>
+
+</block>

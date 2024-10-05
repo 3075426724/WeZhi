@@ -1,0 +1,97 @@
+@import "../../../style/skin.wxss";
+
+page {
+	background-color: #fff;
+}
+
+.main {
+	width: 100%;
+	padding: 30rpx 40rpx;
+	margin-top: -60rpx;
+	background-color: #fff;
+	position: relative;
+	border-top-left-radius: 30rpx;
+	border-top-right-radius: 30rpx;
+	border-top: 4rpx solid #FD962E;
+}
+
+.top {
+	width: 100%;
+}
+
+.top image {
+	width: 100%;
+}
+
+.rule {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 10rpx 0;
+}
+
+.rule .item {
+	background-color: #f8f8f8;
+	padding: 16rpx 0rpx;
+	border-radius: 10rpx;
+	font-size: 26rpx;
+	width: 180rpx;
+	text-align: center;
+	color: var(--projectColor); 
+}
+
+.list {
+	position: relative;
+	margin-top: 20rpx;
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0rpx;
+	border-radius: 14rpx;
+}
+
+.list .item {
+	width: calc((100% - 20rpx) / 2);
+	border-radius: 10rpx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 30rpx 30rpx;
+	margin-bottom: 20rpx;
+	background-color: #fde6d2;
+	background-image: linear-gradient(135deg, #fde6d2, #fcf4ed, #fde6d2);
+}
+
+.list .item:nth-child(2n+1) {
+	margin-right: 20rpx;
+}
+
+.list .item .left {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+}
+
+.list .item .left .line1 {
+	font-size: 28rpx;
+	font-weight: bold;
+	color: var(--red);
+}
+
+.list .item .right {
+	width: 60rpx;
+	height: 60rpx;
+	border-radius: 50%;
+	background-color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: .9;
+}
+
+.list .item .right>image {
+	width: 40rpx;
+	height: 40rpx;
+	border-radius: 50%;
+}

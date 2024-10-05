@@ -1,0 +1,37 @@
+<view wx:if="{{isLoad===null}}" class="margin-top load notexist text-l text-grey"></view>
+<view wx:if="{{isLoad===false}}" class="margin-top load loading text-l text-grey"></view>
+
+<view class="main-admin" wx:if="{{isAdmin&&isLoad}}">
+	<form bindsubmit="bindFormSubmit">
+		<view class="form-box shadow">
+
+
+			<view class="hint-desc text-bold" style="padding-top:10rpx"><text class="icon-info margin-right-xxs"></text>注意事项</view>
+			<view class="hint-desc">1. 请选择后缀名为xlsx的Excel文件导入</view>
+			<view class="hint-desc">2. 每次导入数据不超过3000条</view>
+			<view class="hint-desc">3. Excel表格第一行为标题，不作为导入数据</view>
+
+			<view class="hint-desc text-bold margin-top-xs"><text class="icon-form margin-right-xxs"></text>Excel数据格式：</view>
+			<view class="hint-desc text-bold fmt">
+				<view class="inner">
+					<block wx:for="{{temp}}" wx:key="k"> <text>{{item}}</text> <text class="margin-left-xs margin-right-xs">|</text></block>
+				</view>
+			</view>
+
+			<view wx:if="{{cateIdOptions.length>1}}" class="form-group arrow" id="formCateId">
+				<view class="title must">分类</view>
+				<cmpt-picker id="cate-picker" sourceData="{{cateIdOptions}}" bind:select="url" data-type="picker" data-item="formCateId" item="{{formCateId}}"> </cmpt-picker>
+			</view>
+			<view wx:if="{{formCateIdFocus}}" class="hint-desc error">{{formCateIdFocus}}</view> 
+			 
+		 
+		</view>
+
+
+		<view class="padding-bottom flex  flex-direction  ">
+			<button formType="submit" class="btn-admin bg-blue margin-top-s text-bold large bg-{{skin}}">导入数据文件</button>
+		</view>
+
+
+	</form>
+</view>

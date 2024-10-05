@@ -1,0 +1,27 @@
+<view wx:if="{{isLoad===null}}" class="margin-top load notexist text-l load-project"></view>
+<view wx:if="{{isLoad===false||!time}}" class="margin-top load loading text-l load-project"></view>
+
+<view class="main" wx:if="{{isLoad&&time}}">
+	<view class="time">
+		<view class="inner"><text><text class="icon-remind margin-right-xxs"></text>{{time}}</text></view>
+	</view>
+	<view class="info-box">
+		<view class="line1">
+			<view class="type">{{questionList[index].type}}</view>
+			<view>第{{index+1}}<text class="margin-left-xxxs margin-right-xxxs">/</text>{{questionList.length}}题</view>
+		</view>
+		<view class="title"><text>{{index+1}}、{{questionList[index].title}}</text></view>
+		<view class="img">
+			<image wx:if="{{questionList[index].img}}" mode="widthFix" bind:tap="url" data-type="image" data-url="{{questionList[index].img}}" src="{{questionList[index].img}}" class="loading img" lazy-loading="{{true}}" show-menu-by-longpress> </image>
+		</view>
+		<view class="option-list">
+			<view wx:for="{{questionList[index].optionList}}" bind:tap="bindSelectTap" data-idx="{{idx}}" class="item {{item.select?'cur':''}} {{ nextIndex==index&&item.select?'bg-yellow1':''}}" wx:key="k" wx:for-index="idx">{{item.val}}、{{item.label}}</view>
+		</view>
+
+		<view class="oprt" wx:if="{{!isOver}}">
+			<view bind:tap="bindSubmitTap" hover-class="hover" class="submit">{{index<questionList.length-1?'下一题':'结束答题'}}</view>
+			<view wx:if="{{index<questionList.length-1}}" bind:tap="bindOverTap" hover-class="hover" class="submit bg-grey light">提前结束</view>
+		</view>
+	</view>
+
+</view>

@@ -1,0 +1,66 @@
+@import "../../../style/skin.wxss";
+page {
+	background-color: #fff;
+}
+
+.main {
+	width: 100%; 
+	padding: 0rpx 20rpx;
+}
+
+.info-box {
+	width: 100%;
+	background-color: #fff; 
+	padding: 40rpx 80rpx 100rpx;
+	height: 100%;
+	display: flex;
+	flex-direction: column; 
+	justify-content: flex-start;
+}
+
+.info-box .num {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 10rpx 0;
+	margin-bottom: 30rpx;
+}
+
+.info-box .num .title {
+	font-size: 36rpx;
+	margin-bottom: 30rpx;
+}
+
+.info-box .num .size {
+	font-size: 26rpx;
+	color: #999;
+}
+
+.info-box .num>input {
+	font-size: 40rpx;
+	text-align: center;
+	margin-top: 30rpx;
+	border-radius: 6rpx;
+	height: 80rpx;
+	border-bottom: 2rpx solid #ccc;
+	width: 130rpx;
+}
+
+
+.info-box .submit {
+	font-size: 30rpx;
+	width: 100%;
+	background-color: var(--projectColor);
+	padding: 30rpx 20rpx;
+	margin-bottom: 40rpx;
+	border-radius: 10rpx;
+	text-align: center;
+	color: #fff;
+}
+
+.hover {
+	opacity: .8;
+	transform: scale(.95, .95);
+}
